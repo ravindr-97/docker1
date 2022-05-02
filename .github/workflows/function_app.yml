@@ -13,8 +13,8 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: democontainer032.azurecr.io
-          username: 'secrets.REGISTRY_USERNAME'
-          password: 'secrets.REGISTRY_PASSWORD'
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: |
           docker build . -t democontainer032.azurecr.io/democontainer032:${{ github.sha }}
@@ -25,7 +25,7 @@ jobs:
           app-name: 'container0321'
           slot-name: '12'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'latest.azurecr.io/test:${{ github.sha }}'
+          images: 'latest.azurecr.io/latest:${{ github.sha }}'
       
       - name: Azure Login
         uses: azure/login@v1
