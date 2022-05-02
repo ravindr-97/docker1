@@ -13,8 +13,8 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: democontainer032.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          username: 'democontainer032'
+          password: 'TZ7EHbEaDJEffUK4CO0VHbjE8ku=jiza'
 
       - run: |
           docker build . -t democontainer032.azurecr.io/democontainer032:${{ github.sha }}
