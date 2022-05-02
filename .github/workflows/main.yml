@@ -1,11 +1,8 @@
-
+# This is a basic workflow to help you get started with Actions
 name: AZURE push image and deploy app service
 on:
-   push:
-     branches:
-      - main
+ #  push
    workflow_dispatch:
-   
 jobs:
   build:
     runs-on: ubuntu-latest
