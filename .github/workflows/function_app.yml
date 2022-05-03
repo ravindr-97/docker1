@@ -33,7 +33,12 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
-      - name: Azure CLI script
+      - name: Upload to blob storage
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.34.1
+          inlineScript: |
+            az storage blob upload \
+              --account-name my-account \
+              --container-name 'my-container' \
+              --name 'path/to/file.html' \
+              --file ./file.html
