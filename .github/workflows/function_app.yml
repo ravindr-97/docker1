@@ -34,7 +34,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Upload to blob storage
-        uses: azure/CLI@v2
+        uses: azure/CLI@v1
         with:
           inlineScript: |
             az storage blob upload \
@@ -43,7 +43,7 @@ jobs:
               --name 'path/to/file.html' \
               --file ./file.html
       - name: Azure CLI script
-        uses: azure/CLI@v2
+        uses: azure/CLI@v1
         with:
           azcliversion: 2.34.1
           inlineScript: |
