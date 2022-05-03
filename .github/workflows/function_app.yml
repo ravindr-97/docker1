@@ -45,7 +45,7 @@ jobs:
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.34.1
+          azcliversion: 1.130.0
           inlineScript: |
             az webapp deployment slot swap -g onprem-rg -n container0321 --slot 12 \
                   --target-slot production
