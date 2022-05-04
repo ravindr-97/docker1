@@ -1,9 +1,3 @@
-from flask import Flask
-app = Flask(__name__)
+# This program prints Hello, world!
 
-@app.route('/')
-def hello_geek():
-    return '<h1> Hello WORLD </h2>'
-
-if __name__ == "__main__":
-    app.run(debug=True)
+print('Hello, world!')
